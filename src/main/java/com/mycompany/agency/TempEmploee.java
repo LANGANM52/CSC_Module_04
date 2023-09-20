@@ -4,7 +4,7 @@ package com.mycompany.agency;
 
     // TODO 1: Make TempEmploee a child of StaffEmploee
 
-public class TempEmploee 
+public class TempEmploee extends StaffEmployee 
 {
     private int hoursWorked;
 
@@ -26,22 +26,24 @@ public class TempEmploee
     //-----------------------------------------------------------------
     public void addHours(int moreHours)
     {
-        
+        hoursWorked += moreHours;
     }
 
     //-----------------------------------------------------------------
     // TODO3: Computes and returns the pay for this hourly employee.
     //-----------------------------------------------------------------
+    @Override
     public double pay()
     {
-
+        return hoursWorked * payRate;
     }
 
     //-----------------------------------------------------------------
     // TODO4: Returns information about this hourly employee as a string.
     //-----------------------------------------------------------------
+    @Override
     public String toString()
     {
-
+        return super.toString() + "\nHours Worked: " + hoursWorked;
     }
 }
